@@ -49,7 +49,8 @@
             "endOfLine": "auto",
             "semi": false,
             "trailingComma": "none",
-            "arrowParens": "avoid"
+            "arrowParens": "avoid",
+            "printWidth": 120
           }
         ],
         "import/extensions": "off", // Avoid missing file extension errors, TypeScript already provides a similar feature

@@ -8,13 +8,11 @@ export const metadata: Metadata = {
   description: 'Welcome to my portfolio page!'
 }
 
-const Portfolio = () => (
+const PortfolioPage = () => (
   <Main>
     <p>
-      Welcome to my portfolio page! Here you will find a carefully curated
-      collection of my work and accomplishments. Through this portfolio,
-      I&apos;m to showcase my expertise, creativity, and the value I can bring
-      to your projects.
+      Welcome to my portfolio page! Here you will find a carefully curated collection of my work and accomplishments.
+      Through this portfolio, I&apos;m to showcase my expertise, creativity, and the value I can bring to your projects.
     </p>
 
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -27,9 +25,7 @@ const Portfolio = () => (
               alt="Portfolio project"
             />
 
-            <div className="bg-blue-200 p-3 text-xl font-bold">
-              Portfolio {elt}
-            </div>
+            <div className="bg-blue-200 p-3 text-xl font-bold">Portfolio {elt}</div>
           </div>
         </Link>
       ))}
@@ -37,4 +33,4 @@ const Portfolio = () => (
   </Main>
 )
 
-export default Portfolio
+export default PortfolioPage
