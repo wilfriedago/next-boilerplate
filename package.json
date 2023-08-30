@@ -120,6 +120,16 @@
       "path": "@commitlint/cz-commitlint"
     }
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "eslint"
+    ],
+    "**/*.ts?(x)": "npm run check-types",
+    "*.{json,yaml}": [
+      "prettier --write"
+    ]
+  },
   "release": {
     "branches": [
       "main"
