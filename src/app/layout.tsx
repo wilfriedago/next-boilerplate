@@ -7,7 +7,8 @@ import type { PropsWithChildren } from 'react'
 import { AppConfig } from '@/shared/configs'
 
 const font = Lato({
-  weight: ['300', '400']
+  weight: ['300', '400'],
+  subsets: ['latin']
 })
 
 export const metadata: Metadata = {

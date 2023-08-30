@@ -1,11 +1,11 @@
 {
   "name": "next-js-boilerplate",
-  "version": "3.18.0",
+  "version": "0.0.0",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "cross-env FORCE_COLOR=1 next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "build-stats": "cross-env ANALYZE=true npm run build",
+    "build-stats": "cross-env ANALYZE=true pnpm build",
     "clean": "rimraf .next .swc out coverage",
     "lint": "next lint",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
@@ -136,6 +136,11 @@
       ],
       "@semantic-release/git",
       "@semantic-release/github"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   },
   "author": "Wilfried AGO (github.com/wilfriedago)"

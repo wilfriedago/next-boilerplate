@@ -5,7 +5,7 @@ import { Main } from './Main'
 describe('Main template', () => {
   describe('Render method', () => {
     it('should have 8 menu items', () => {
-      render(<Main meta={null}>{null}</Main>)
+      render(<Main>{null}</Main>)
 
       const menuItemList = screen.getAllByRole('listitem')
 
@@ -13,7 +13,7 @@ describe('Main template', () => {
     })
 
     it('should have a link to support creativedesignsguru.com', () => {
-      render(<Main meta={null}>{null}</Main>)
+      render(<Main>{null}</Main>)
 
       const copyrightSection = screen.getByText(/© Copyright/)
       const copyrightLink = within(copyrightSection).getByRole('link')
@@ -24,10 +24,7 @@ describe('Main template', () => {
        * The link doesn't need to appear on every pages, one link on one page is enough.
        * Thank you for your support it'll mean a lot for us.
        */
-      expect(copyrightLink).toHaveAttribute(
-        'href',
-        'https://creativedesignsguru.com'
-      )
+      expect(copyrightLink).toHaveAttribute('href', 'https://creativedesignsguru.com')
     })
   })
 })
