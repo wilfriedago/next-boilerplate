@@ -115,11 +115,6 @@
     "tsx": "^3.12.7",
     "typescript": "^5.2.2"
   },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
