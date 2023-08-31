@@ -77,12 +77,6 @@
           {
             "argsIgnorePattern": "^_"
           }
-        ],
-        "import/no-extraneous-dependencies": [ // TODO : Recheck this rule
-          "off",
-          {
-            "devDependencies": true
-          }
         ]
       }
     },

@@ -1,15 +1,16 @@
 {
-  "name": "next-js-boilerplate",
+  "name": "next-boilerplate",
+  "author": "Wilfried AGO (github.com/wilfriedago)",
   "version": "0.0.0",
   "scripts": {
     "dev": "cross-env FORCE_COLOR=1 next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "build-stats": "cross-env ANALYZE=true pnpm build",
+    "build:stats": "cross-env ANALYZE=true pnpm build",
     "clean": "rimraf .next .swc out coverage",
     "lint": "next lint",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
-    "check-types": "tsc --noEmit --pretty && tsc --project cypress --noEmit --pretty",
+    "typecheck": "tsc --noEmit --pretty && tsc --project cypress --noEmit --pretty",
     "test": "jest",
     "commit": "cz",
     "cypress": "cypress open",
@@ -33,7 +34,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "2.0.0",
     "date-fns": "^2.30.0",
-    "million": "2.6.0-beta.10",
     "next": "^13.4.19",
     "next-compose-plugins": "^2.2.1",
     "next-sitemap": "^4.2.2",
@@ -62,6 +62,7 @@
     "@storybook/react": "^7.4.0",
     "@storybook/test-runner": "^0.13.0",
     "@storybook/testing-library": "^0.2.0",
+    "@tailwindcss/forms": "^0.5.6",
     "@testing-library/cypress": "^9.0.0",
     "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
@@ -152,6 +153,5 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "author": "Wilfried AGO (github.com/wilfriedago)"
+  }
 }
