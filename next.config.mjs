@@ -11,8 +11,10 @@ const nextConfig = {
   eslint: {
     dirs: ['.']
   },
+  compress: true,
   swcMinify: true,
   cleanDistDir: true,
+  optimizeFonts: true,
   // Uncomment to add domain whitelist
   // images: {
   //   domains: [

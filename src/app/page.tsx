@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 
-import Counter from '@/components/Counter'
-import { Main } from '@/templates/Main'
+import { Counter, Main } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Home',

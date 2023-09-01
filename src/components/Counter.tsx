@@ -1,18 +1,15 @@
 'use client'
 
+import { Button } from 'baseui/button'
 import { useState } from 'react'
 
-import { Button } from './Button'
-
-export default function Counter() {
+export const Counter = () => {
   const [count, setCount] = useState(0)
 
   return (
     <div>
       <p>You clicked {count} times</p>
-      <Button intent="secondary" onClick={() => setCount(count + 1)}>
-        Click me
-      </Button>
+      <Button onClick={() => setCount(count + 1)}>Click me</Button>
     </div>
   )
 }

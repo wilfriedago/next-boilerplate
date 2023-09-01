@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import { Main } from '@/templates/Main'
+import { Main } from '@/components/Main'
 
 export const metadata: Metadata = {
   title: 'Portfolio',

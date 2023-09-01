@@ -67,6 +67,5 @@ export default {
       }
     }
   },
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
   plugins: [require('@tailwindcss/forms')]
 } satisfies Config

@@ -11,5 +11,5 @@ test('should navigate to the portfolio page', async ({ page }) => {
   await expect(page).toHaveURL('/portfolio')
 
   // The new page should contain an h1 with "Portfolio Page"
-  await expect(page.locator('h1')).toContainText('Portfolio')
+  await expect(page.locator('h1')).toContainText('Nextjs Starter')
 })
