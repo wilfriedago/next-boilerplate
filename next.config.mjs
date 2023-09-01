@@ -4,11 +4,21 @@ import withPlugins from 'next-compose-plugins'
 import withBundleAnalyzer from '@next/bundle-analyzer'
 import { env } from './env.mjs'
 
+const bundleAnalyzerConfig = withBundleAnalyzer({ enabled: env.ANALYZE })
+
 /** @type {import('next').NextConfig} */
-const nextConfig = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
+const nextConfig = {
   eslint: {
     dirs: ['.']
   },
+  swcMinify: true,
+  cleanDistDir: true,
+  // Uncomment to add domain whitelist
+  // images: {
+  //   domains: [
+  //     'res.cloudinary.com',
+  //   ],
+  // },
   poweredByHeader: false,
   basePath: '',
   // The starter code load resources from `public` folder with `router.basePath` in React components.
@@ -25,15 +35,7 @@ const nextConfig = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]],
     })
 
     return config
-  },
-  rewrites() {
-    return [
-      { source: '/healthz', destination: '/api/health' },
-      { source: '/api/healthz', destination: '/api/health' },
-      { source: '/health', destination: '/api/health' },
-      { source: '/ping', destination: '/api/health' }
-    ]
   }
-})
+}
 
-export default nextConfig
+export default withPlugins([bundleAnalyzerConfig], nextConfig)

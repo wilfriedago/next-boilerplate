@@ -29,6 +29,7 @@
         "@typescript-eslint",
         "unused-imports",
         "tailwindcss",
+        "baseui",
         "simple-import-sort"
       ],
       "extends": [
@@ -77,7 +78,10 @@
           {
             "argsIgnorePattern": "^_"
           }
-        ]
+        ],
+        "baseui/deprecated-theme-api": "warn",
+        "baseui/deprecated-component-api": "warn",
+        "baseui/no-deep-imports": "warn"
       }
     },
     // Configuration for testing
@@ -98,21 +102,6 @@
         "plugin:testing-library/react",
         "plugin:jest-dom/recommended"
       ]
-    },
-    // Configuration for e2e testing (Cypress)
-    {
-      "files": [
-        "cypress/**/*.ts"
-      ],
-      "plugins": [
-        "cypress"
-      ],
-      "extends": [
-        "plugin:cypress/recommended"
-      ],
-      "parserOptions": {
-        "project": "./cypress/tsconfig.json"
-      }
     },
     // Configuration for Storybook
     {

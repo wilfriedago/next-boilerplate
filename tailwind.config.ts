@@ -66,8 +66,7 @@ export default {
         shimmer: 'shimmer 1.3s linear infinite'
       }
     }
-  }
-  // TODO: Add @tailwindcss/forms
-  // eslint-disable-next-line global-require
-  // plugins: [require('@tailwindcss/forms')]
+  },
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  plugins: [require('@tailwindcss/forms')]
 } satisfies Config

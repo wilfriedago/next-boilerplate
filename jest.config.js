@@ -5,7 +5,8 @@ const createJestConfig = nextJest({
   dir: './'
 })
 
-const customJestConfig = {
+/** @type {import('jest').Config} */
+const jestConfig = {
   moduleNameMapper: {
     // Handle module aliases (this will be automatically configured for you soon)
     '^@/(.*)$': '<rootDir>/src/$1',
@@ -35,4 +36,4 @@ const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom'
 }
 
-module.exports = createJestConfig(customJestConfig)
+module.exports = createJestConfig(jestConfig)

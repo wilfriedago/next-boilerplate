@@ -14,10 +14,6 @@
 # storybook
 storybook-static
 
-# cypress
-cypress/screenshots
-cypress/videos
-
 # next.js
 /.next
 /out
@@ -53,4 +49,11 @@ local
 # vercel
 .vercel
 
+# lock files
 pnpm-lock.yaml
+
+# test results
+/test-results
+
+# bundle analyzer
+/analyze
