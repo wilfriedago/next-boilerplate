@@ -33,11 +33,11 @@
         "simple-import-sort"
       ],
       "extends": [
-        "plugin:tailwindcss/recommended",
         "airbnb",
         "airbnb-typescript",
         "next/core-web-vitals",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:tailwindcss/recommended"
       ],
       "parserOptions": {
         "project": "./tsconfig.json"
@@ -79,6 +79,7 @@
             "argsIgnorePattern": "^_"
           }
         ],
+        "import/no-extraneous-dependencies": "off",
         "baseui/deprecated-theme-api": "warn",
         "baseui/deprecated-component-api": "warn",
         "baseui/no-deep-imports": "warn"
@@ -101,6 +102,15 @@
         "plugin:jest-formatting/recommended",
         "plugin:testing-library/react",
         "plugin:jest-dom/recommended"
+      ]
+    },
+    {
+      "files": [
+        "**/*.specs.ts",
+        "**/*.specs.tsx"
+      ],
+      "extends": [
+        "plugin:playwright/jest-playwright"
       ]
     },
     // Configuration for Storybook
