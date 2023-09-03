@@ -4,7 +4,7 @@
   "license": "MIT",
   "version": "0.0.0",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "start": "next start",
     "build": "next build",
     "build:prod": "run-s clean build",
@@ -30,7 +30,6 @@
     "@hookform/resolvers": "^3.3.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@t3-oss/env-nextjs": "^0.6.1",
-    "baseui": "^13.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "2.0.0",
     "date-fns": "^2.30.0",
@@ -42,8 +41,6 @@
     "react-hook-form": "^7.45.4",
     "react-hot-toast": "^2.4.1",
     "react-redux": "^8.1.2",
-    "styletron-engine-atomic": "^1.5.0",
-    "styletron-react": "^6.1.0",
     "tailwind-merge": "^1.14.0",
     "zod": "^3.22.2"
   },
@@ -83,7 +80,6 @@
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-next": "^13.4.19",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-baseui": "^13.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jest": "^27.2.3",
     "eslint-plugin-jest-dom": "^5.1.0",
