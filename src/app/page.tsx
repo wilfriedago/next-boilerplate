@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { Counter, Main } from '@/components'
+import { Main } from '@/components'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 
 const HomePage = () => (
   <Main>
-    <Counter />
     <p>
       Welcome to my Home page! Here you will find a carefully curated collection of my work and accomplishments. Through
       this Home, I&apos;m to showcase my expertise, creativity, and the value I can bring to your projects.

@@ -11,7 +11,7 @@
     "build:stats": "cross-env ANALYZE=true npm run build",
     "lint": "next lint",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
-    "typecheck": "tsc --noEmit --pretty",
+    "typecheck": "tsc --noEmit --pretty --jsx react-jsx",
     "clean": "rimraf .next .swc out coverage analyze tests/e2e-results",
     "test": "jest",
     "e2e": "playwright test --ui",

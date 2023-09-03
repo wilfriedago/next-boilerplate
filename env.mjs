@@ -5,11 +5,8 @@ import { z } from 'zod'
 // eslint-disable-next-line import/prefer-default-export
 export const env = createEnv({
   server: {
-    CLERK_SECRET_KEY: z.string().nonempty(),
-    ANALYZE: z
-      .enum(['true', 'false'])
-      .optional()
-      .transform(value => value === 'true')
+    ANALYZE: z.enum(['true', 'false']).optional().transform(val => val === 'true'),
+    CLERK_SECRET_KEY: z.string().nonempty()
   },
   client: {
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().nonempty(),
