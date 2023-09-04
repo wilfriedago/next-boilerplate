@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import withBundleAnalyzer from '@next/bundle-analyzer'
 
 const bundleAnalyzerConfig = withBundleAnalyzer({ enabled: true })

@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/utils/helpers'
