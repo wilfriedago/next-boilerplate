@@ -1,4 +1,3 @@
-import withPlugins from 'next-compose-plugins'
 import withBundleAnalyzer from '@next/bundle-analyzer'
 import { env } from './env.mjs'
 
@@ -38,4 +37,4 @@ const nextConfig = {
   }
 }
 
-export default withPlugins([bundleAnalyzerConfig], nextConfig)
+export default bundleAnalyzerConfig(nextConfig)
