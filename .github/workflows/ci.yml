@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [main]
 
-env:
-  STORE_PATH: "next"
-
 concurrency:
   group: ${{ github.job }}-${{ github.ref }}
   cancel-in-progress: true
