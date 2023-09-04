@@ -53,7 +53,7 @@ local
 pnpm-lock.yaml
 
 # test results
-/test-results
+/tests/e2e-results
 
 # bundle analyzer
 /analyze

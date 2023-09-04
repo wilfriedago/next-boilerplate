@@ -50,6 +50,7 @@
     ".storybook/*.ts",
     ".next/types/**/*.ts",
     "tailwind.config.ts",
+    "playwright.config.ts",
     "jest.config.js",
     "jest.setup.js"
   ]

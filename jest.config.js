@@ -15,7 +15,7 @@ const jestConfig = {
 
     '^__mocks__/(.*)$': '<rootDir>/__mocks__/$1'
   },
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [

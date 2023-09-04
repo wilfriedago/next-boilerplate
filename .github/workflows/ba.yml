@@ -2,11 +2,9 @@ name: Bundle Analysis
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 defaults:
@@ -18,16 +16,23 @@ jobs:
   analyze:
     env:
       SKIP_ENV_VALIDATION: true
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - name: Set up node
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: "18.x"
+          node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
+      - name: 📥 Install dependencies
         run: yarn install --frozen-lockfile
 
       - name: Restore next build

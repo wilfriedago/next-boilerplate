@@ -18,6 +18,7 @@
       "severity": "warn"
     }
   ], // ESLint errors in yellow warning
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.tsdk": "node_modules/typescript/lib", // Use the workspace version of TypeScript
   "typescript.enablePromptUseWorkspaceTsdk": true, // For security reasons it's require that users opt into using the workspace version of typescript
   "jest.autoRun": {
@@ -31,9 +32,16 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "prettier.ignorePath": ".gitignore",
-  "cSpell.words": [
-    "bufferutil",
-    "healthz"
-  ] // Don't run prettier for files listed in .gitignore
+  // Tailwind CSS Autocomplete, add more if used in projects
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "classNames",
+    "containerClassName"
+  ],
+  "prettier.ignorePath": ".gitignore", // Don't run prettier for files listed in .gitignore
+  "cSpell.words": ["bufferutil", "healthz"],
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

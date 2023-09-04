@@ -1,6 +1,6 @@
-import type { Config } from 'tailwindcss'
+import type { Config as TailwindConfig } from 'tailwindcss'
 
-export default {
+const config: TailwindConfig = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontSize: {
@@ -69,4 +69,6 @@ export default {
   },
   // eslint-disable-next-line global-require
   plugins: [require('@tailwindcss/forms')]
-} satisfies Config
+}
+
+export default config
