@@ -11,9 +11,7 @@ const jestConfig = {
   moduleNameMapper: {
     // Handle module aliases (this will be automatically configured for you soon)
     '^@/(.*)$': '<rootDir>/src/$1',
-
     '^@/public/(.*)$': '<rootDir>/public/$1',
-
     '^__mocks__/(.*)$': '<rootDir>/__mocks__/$1'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
@@ -34,6 +32,7 @@ const jestConfig = {
       statements: 0
     }
   },
+  testMatch: ['**/*.test.*'], // Run only files with ".test." suffix
   testEnvironment: 'jest-environment-jsdom'
 }
 

@@ -1,30 +1,51 @@
-import { render, screen, within } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
+
+import { AppConfig } from '@/shared/configs'
 
 import { Main } from './Main'
 
 describe('Main template', () => {
-  describe('Render method', () => {
-    it('should have 8 menu items', () => {
-      render(<Main>{null}</Main>)
+  it('renders the title and description', () => {
+    render(
+      <Main>
+        <div>Content goes here</div>
+      </Main>
+    )
 
-      const menuItemList = screen.getAllByRole('listitem')
+    const titleElement = screen.getByText(AppConfig.title)
+    const descriptionElement = screen.getByText(AppConfig.description)
 
-      expect(menuItemList).toHaveLength(8)
-    })
+    expect(titleElement).toBeInTheDocument()
+    expect(descriptionElement).toBeInTheDocument()
+  })
 
-    it('should have a link to support creativedesignsguru.com', () => {
-      render(<Main>{null}</Main>)
+  it('renders navigation links', () => {
+    render(
+      <Main>
+        <div>Content goes here</div>
+      </Main>
+    )
 
-      const copyrightSection = screen.getByText(/© Copyright/)
-      const copyrightLink = within(copyrightSection).getByRole('link')
+    const homeLink = screen.getByRole('link', { name: /Home/i })
+    const portfolioLink = screen.getByRole('link', { name: /Portfolio/i })
+    const signInLink = screen.getByRole('link', { name: /Sign in/i })
+    const signUpLink = screen.getByRole('link', { name: /Sign up/i })
 
-      /*
-       * PLEASE READ THIS SECTION
-       * We'll really appreciate if you could have a link to our website
-       * The link doesn't need to appear on every pages, one link on one page is enough.
-       * Thank you for your support it'll mean a lot for us.
-       */
-      expect(copyrightLink).toHaveAttribute('href', 'https://creativedesignsguru.com')
-    })
+    expect(homeLink).toBeInTheDocument()
+    expect(portfolioLink).toBeInTheDocument()
+    expect(signInLink).toBeInTheDocument()
+    expect(signUpLink).toBeInTheDocument()
+  })
+
+  it('renders child content', () => {
+    render(
+      <Main>
+        <div>Content goes here</div>
+      </Main>
+    )
+
+    const contentElement = screen.getByText('Content goes here')
+
+    expect(contentElement).toBeInTheDocument()
   })
 })
