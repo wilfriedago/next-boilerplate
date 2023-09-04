@@ -1,5 +1,3 @@
-// @ts-check
-/* eslint-disable import/no-extraneous-dependencies, import/extensions */
 import withPlugins from 'next-compose-plugins'
 import withBundleAnalyzer from '@next/bundle-analyzer'
 import { env } from './env.mjs'
