@@ -48,7 +48,7 @@ jobs:
               ${{ runner.os }}-pnpm-store-
   
       - name: Install dependencies
-        run: pnpm install    
+        run: pnpm install --no-frozen-lockfile
       
       - name: Build project
         run: npx next build
@@ -92,7 +92,7 @@ jobs:
                 ${{ runner.os }}-pnpm-store-
     
       - name: Install dependencies
-        run: pnpm install   
+        run: pnpm install --no-frozen-lockfile   
 
       - if: github.event_name == 'pull_request'
         name: ✅ Validate all commits from PR
