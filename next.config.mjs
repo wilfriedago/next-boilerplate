@@ -1,7 +1,6 @@
 import withBundleAnalyzer from '@next/bundle-analyzer'
-import { env } from './env.mjs'
 
-const bundleAnalyzerConfig = withBundleAnalyzer({ enabled: env.ANALYZE })
+const bundleAnalyzerConfig = withBundleAnalyzer({ enabled: true })
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
