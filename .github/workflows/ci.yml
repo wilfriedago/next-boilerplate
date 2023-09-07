@@ -1,4 +1,4 @@
-name: Continuous Delivery
+name: Continuous Integration
 
 on:
   push:
@@ -28,29 +28,29 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install pnpm
+      - name: 🪄 Installing pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 7
-          run_install: false    
+          run_install: false
 
-      - name: Get pnpm store directory
+      - name: 🗂️ Getting pnpm store directory
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-  
-      - name: Setup pnpm cache
+
+      - name: ♻️ Setting up pnpm cache
         uses: actions/cache@v3
         with:
-            path: ${{ env.STORE_PATH }}
-            key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-            restore-keys: |
-              ${{ runner.os }}-pnpm-store-
-  
-      - name: Install dependencies
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: 📥 Installing project dependencies
         run: pnpm install --no-frozen-lockfile
-      
-      - name: Build project
+
+      - name: 📦 Building project
         run: npx next build
 
   test:
@@ -72,33 +72,33 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install pnpm
+      - name: 🪄 Installing pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 7
-          run_install: false    
-  
-      - name: Get pnpm store directory
+          run_install: false
+
+      - name: 🗂️ Getting pnpm store directory
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-    
-      - name: Setup pnpm cache
+
+      - name: ♻️ Setting up pnpm cache
         uses: actions/cache@v3
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-                ${{ runner.os }}-pnpm-store-
-    
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile   
+            ${{ runner.os }}-pnpm-store-
+
+      - name: 📥 Installing project dependencies
+        run: pnpm install --no-frozen-lockfile
 
       - if: github.event_name == 'pull_request'
         name: ✅ Validate all commits from PR
         run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
-      - name: 🔬 Linter
+      - name: 🔬 Linting
         run: pnpm lint
 
       - name: 🔎 Type checking

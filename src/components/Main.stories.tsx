@@ -15,6 +15,7 @@ const meta = {
 } satisfies Meta<typeof Main>
 
 export default meta
+
 type Story = StoryObj<typeof Main>
 
 export const MainWithReactComponent = {

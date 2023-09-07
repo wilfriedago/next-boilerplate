@@ -3,6 +3,7 @@ import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
 
+import { ScreenSizeDetector } from '@/components'
 import { AppConfig } from '@/shared/configs'
 
 export const metadata: Metadata = {
@@ -33,7 +34,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang={AppConfig.locale}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ScreenSizeDetector position="top-left" />
+      </body>
     </html>
   )
 }

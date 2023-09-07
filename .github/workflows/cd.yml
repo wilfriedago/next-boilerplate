@@ -1,0 +1,17 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.job }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    name:

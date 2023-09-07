@@ -81,7 +81,7 @@
         "import/no-extraneous-dependencies": "off"
       }
     },
-    // Configuration for testing
+    // Configuration for testing (Jest)
     {
       "files": [
         "**/*.test.ts",
@@ -100,6 +100,7 @@
         "plugin:jest-dom/recommended"
       ]
     },
+    // Configuration for testing (Playwright)
     {
       "files": [
         "**/*.specs.ts",

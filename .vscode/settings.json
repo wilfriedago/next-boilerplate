@@ -40,7 +40,7 @@
     "containerClassName"
   ],
   "prettier.ignorePath": ".gitignore", // Don't run prettier for files listed in .gitignore
-  "cSpell.words": ["bufferutil", "healthz"],
+  "cSpell.words": ["autodocs", "bufferutil", "healthz"],
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }

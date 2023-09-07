@@ -8,8 +8,7 @@ export const env = createEnv({
     ANALYZE: z
       .enum(['true', 'false'])
       .optional()
-      // eslint-disable-next-line eqeqeq
-      .transform(val => val == 'true'),
+      .transform(val => val === 'true'),
     CLERK_SECRET_KEY: z.string().nonempty()
   },
   client: {

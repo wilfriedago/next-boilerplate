@@ -1,7 +1,8 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/extensions, import/no-extraneous-dependencies */
 import withBundleAnalyzer from '@next/bundle-analyzer'
+import { env } from './env.mjs'
 
-const bundleAnalyzerConfig = withBundleAnalyzer({ enabled: true })
+const bundleAnalyzerConfig = withBundleAnalyzer({ enabled: env.ANALYZE })
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,6 +13,10 @@ const nextConfig = {
   swcMinify: true,
   cleanDistDir: true,
   optimizeFonts: true,
+  devIndicators: {
+    buildActivity: true,
+    buildActivityPosition: 'bottom-right'
+  },
   // Uncomment to add domain whitelist
   // images: {
   //   domains: [
