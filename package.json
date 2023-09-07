@@ -1,6 +1,9 @@
 {
   "name": "next-boilerplate",
-  "author": "Wilfried AGO (github.com/wilfriedago)",
+  "author": {
+    "name": "Wilfried AGO",
+    "url": "https://github.com/wilfriedago"
+  },
   "license": "MIT",
   "version": "0.0.0",
   "scripts": {
@@ -22,7 +25,8 @@
     "test:storybook": "pnpm storybook:build && start-server-and-test storybook:serve http://127.0.0.1:6006 test-storybook",
     "commit": "cz",
     "prepare": "husky install",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "chromatic": "npx chromatic --project-token=chpt_2dbc3b09abc1c80 --build-script-name storybook:build"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.23.4",
@@ -70,6 +74,7 @@
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "autoprefixer": "^10.4.15",
+    "chromatic": "^7.1.0",
     "commitizen": "^4.3.0",
     "concurrently": "^8.2.1",
     "cross-env": "^7.0.3",
@@ -130,5 +135,7 @@
       "@semantic-release/git",
       "@semantic-release/github"
     ]
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "next-boilerplate@0.0.0"
 }
